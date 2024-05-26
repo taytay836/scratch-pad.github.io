@@ -59,9 +59,10 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-    return function(string) {
-     
-    
+       // Return a function that takes a string as an argument
+       return function(string) {
+        // Check if the string ends with the given character using slice and case-insensitive comparison
+        return string.slice(-1).toLowerCase() === endsWith.toLowerCase();
     }
 
     
