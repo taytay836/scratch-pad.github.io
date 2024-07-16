@@ -17,7 +17,8 @@
 
 function length(string) {
     // YOUR CODE BELOW HERE //
-
+    //return length
+return string.length
     
 
     // YOUR CODE ABOVE HERE //
@@ -28,7 +29,8 @@ function length(string) {
  */
 function toLowerCase(string) {
     // YOUR CODE BELOW HERE //
-   
+    //return lowercased string
+    return string.toLowerCase();
 
     // YOUR CODE ABOVE HERE //
 }
@@ -38,7 +40,8 @@ function toLowerCase(string) {
  */
 function toUpperCase(string) {
     // YOUR CODE BELOW HERE //
-
+    //return uppercase string
+    return string.toUpperCase();
 
 
     // YOUR CODE ABOVE HERE //
@@ -59,8 +62,9 @@ function toUpperCase(string) {
  */
 function toDashCase(string) {
     // YOUR CODE BELOW HERE //
+    // use dascase syntax to inserrt dash
 
-
+    return string.toLowerCase().replace(/\s+/g, '-');
 
     // YOUR CODE ABOVE HERE //
 }
@@ -79,7 +83,8 @@ function toDashCase(string) {
  */
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
-
+    //return char string lowercased 
+    return string.charAt(0).toLowerCase() === char.toLowerCase();
     
 
     // YOUR CODE ABOVE HERE //
@@ -99,8 +104,9 @@ function beginsWith(string, char) {
  */
 function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
+    //check to see what string ends with using strict equal
 
-
+    return string.charAt(string.length - 1).toLowerCase() === char.toLowerCase();
 
     // YOUR CODE ABOVE HERE //
 }
@@ -112,8 +118,8 @@ function endsWith(string, char) {
  */
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
-
+    //concat strings
+ return stringOne + stringTwo;
 
     // YOUR CODE ABOVE HERE //
 }
@@ -130,8 +136,9 @@ function concat(stringOne, stringTwo) {
  */
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
+    //use.join to join strings
     var args = Array.from(arguments);
-
+    return args.join('');
 
     // YOUR CODE ABOVE HERE //
 }
