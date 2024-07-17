@@ -13,6 +13,9 @@
  */
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
+    return function(value) {
+        return value > base;
+    };
     
    
     
@@ -26,7 +29,9 @@ function createGreaterThanFilter(base) {
  */
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
+    return function(value) {
+        return value < base;
+    };
    
     
     
@@ -40,9 +45,13 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
+       // Define the inner function that will be returned
+       function startsWithFilter(string) {
+        return string.charAt(0) === startsWith;
+    }
     
-    
-    
+    // Return the inner function
+    return startsWithFilter;
     
     // YOUR CODE ABOVE HERE //
 }
@@ -54,7 +63,10 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-    
+    return function(string) {
+        // Check if the last character of the string is the endsWith character
+        return string.charAt(string.length - 1) === endsWith;
+    };
     
     
     
@@ -70,7 +82,11 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
-    
+    var modifiedStrings = [];
+    for (var i = 0; i < strings.length; i++) {
+        modifiedStrings.push(modify(strings[i]));
+    }
+    return modifiedStrings
     
     
     
@@ -90,7 +106,12 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
-    
+    for (var i = 0; i < strings.length; i++) {
+        if (!test(strings[i])) {
+            return false;
+        }
+    }
+    return true;
     
     
     
