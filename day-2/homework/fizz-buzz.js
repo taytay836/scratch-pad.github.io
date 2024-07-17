@@ -12,7 +12,22 @@
 */
 function fizzBuzz() {
     // YOUR CODE GOES BELOW HERE //
-
+    //for loop to iterate to 100
+    for (var i = 1; i <= 100; i++) {
+        //if else chain to check conditions
+        if (i % 3 === 0 && i % 5 === 0) {
+            console.log("FizzBuzz");
+            //if only divisible by 3 print fizz
+        } else if (i % 3 === 0) {
+            console.log("Fizz");
+            //if onlt divisible by 5 print buzz
+        } else if (i % 5 === 0) {
+            console.log("Buzz");
+        } else {
+            //if neither print number
+            console.log(i);
+        }
+    }
 
 
     // YOUR CODE GOES ABOVE HERE //
