@@ -15,9 +15,9 @@
  * HINT: There is a method that can help with this.
  */
 function isArray(value) {
-    // YOUR CODE BELOW HERE //
-    
-    
+    // YOUR CODE BELOW HERE ///return true if valur is an array, false otherwise
+    //return true if value is an array otherwise return false
+    return Object.prototype.toString.call(value) === '[object Array]';
     
     
     // YOUR CODE ABOVE HERE //
