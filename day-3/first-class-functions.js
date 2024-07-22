@@ -45,13 +45,13 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-       // Define the inner function that will be returned
-       function startsWithFilter(string) {
-        return string.charAt(0) === startsWith;
-    }
-    
-    // Return the inner function
-    return startsWithFilter;
+    //check if string starts with given chsracter
+    return function(string) {
+        if (string.length === 0) {
+            return false;
+        }
+        return string.charAt(0).toLowerCase() === startsWith.toLowerCase();
+    };
     
     // YOUR CODE ABOVE HERE //
 }
@@ -63,10 +63,13 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-    return function(string) {
         // Check if the last character of the string is the endsWith character
-        return string.charAt(string.length - 1) === endsWith;
-    };
+        return function(string) {
+            if (string.length === 0) {
+                return false;
+            }
+            return string.charAt(string.length - 1).toLowerCase() === endsWith.toLowerCase();
+        };
     
     
     
