@@ -23,7 +23,22 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
-    
+    var result = [];
+
+    // Determine the direction of the range
+    if (start <= end) {
+        // Forward range
+        for (var i = start; i <= end; i++) {
+            result.push(i);
+        }
+    } else {
+        // Backward range start > end
+        for (var i = start; i >= end; i--) {
+            result.push(i);
+        }
+    }
+
+    return result;
     
     
     
