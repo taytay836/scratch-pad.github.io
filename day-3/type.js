@@ -34,7 +34,9 @@ function isArray(value) {
  */
 function isObject(value) {
     // YOUR CODE BELOW HERE //
-    
+    //check ifvalue is an object excluding date
+    //
+    return typeof value === 'object' && value !== null && Object.prototype.toString.call(value) !== '[object Array]' && Object.prototype.toString.call(value) !== '[object Date]';
 
     
     
@@ -51,7 +53,9 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
-    
+    //check if given value is an array or object
+    return Object.prototype.toString.call(value) === '[object Array]' || (typeof value === 'object' && value !== null && Object.prototype.toString.call(value) !== '[object Date]');
+
     
     
     
@@ -79,7 +83,28 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
+    //determine what type of value this is and return string of it
+      // Handle special case for null
+      if (value === null) {
+        return "null";
+    }
     
+    // Use typeof operator for other types
+    var valueType = typeof value;
+    
+    // Handle typeof edge cases
+    switch (valueType) {
+        case "object":
+            if (Array.isArray(value)) {
+                return "array";
+            } else if (value instanceof Date) {
+                return "date";
+            } else {
+                return "object";
+            }
+        default:
+            return valueType;
+    }
     
     
     
